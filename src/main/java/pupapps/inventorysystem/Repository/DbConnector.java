@@ -17,7 +17,7 @@ public class DbConnector {
     private static final String JDBC_USER = "postgres";
     private static final String JDBC_PASSWORD = "pwd";
     private static final String DEFAULT_DB = "postgres"; // Default database to connect to
-    private static final String NEW_DATABASE_NAME = "pup_cims_db"; // New database name
+    private static final String NEW_DATABASE_NAME = "pup_cims_db2"; // New database name
     private static final String NEW_DATABASE_URL = JDBC_URL + NEW_DATABASE_NAME;
     
     
