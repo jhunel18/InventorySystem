@@ -52,22 +52,23 @@ public class ProductsDAO {
     }
     
     public List<ProductsEntity> getAllProducts() {
-        List<ProductsEntity> productsList = new ArrayList<>();
-        String sql = "SELECT product_name, description, quantity FROM products";
-        try (Connection conn = dbConnector.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql);
-             ResultSet rs = pstmt.executeQuery()) {
+    List<ProductsEntity> productsList = new ArrayList<>();
+    String sql = "SELECT id, product_name, description, quantity FROM products";
+    try (Connection conn = dbConnector.getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(sql);
+         ResultSet rs = pstmt.executeQuery()) {
 
-            while (rs.next()) {
-                ProductsEntity product = new ProductsEntity();
-                product.setProductName(rs.getString("product_name"));
-                product.setDescription(rs.getString("description"));
-                product.setQuantity(rs.getString("quantity"));
-                productsList.add(product);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        while (rs.next()) {
+            ProductsEntity product = new ProductsEntity();
+            product.setId(rs.getInt("id"));
+            product.setProductName(rs.getString("product_name"));
+            product.setDescription(rs.getString("description"));
+            product.setQuantity(rs.getString("quantity"));
+            productsList.add(product);
         }
-        return productsList;
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
+    return productsList;
+}
 }

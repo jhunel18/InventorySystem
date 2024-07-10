@@ -10,12 +10,19 @@ package pupapps.inventorysystem.Entities;
  */
 public class ProductsEntity {
 
-    
+    private int id;
     private String productName;
     private String description;
     private String quantity;
 
-   
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getProductName() {
         return productName;
     }

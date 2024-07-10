@@ -17,7 +17,7 @@ import pupapps.inventorysystem.Repository.UserDAO;
 public class LoginForm extends javax.swing.JFrame {
     private String uname;
     private String password;
-    MainForm mainForm = new MainForm();
+    MenuForm menuForm = new MenuForm();
 
     /**
      * Creates new form LoginForm
@@ -118,7 +118,7 @@ public class LoginForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel5)))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,9 +137,9 @@ public class LoginForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnClear)
                     .addComponent(btnSubmit))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addComponent(btnForgotPassword)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,7 +159,7 @@ public class LoginForm extends javax.swing.JFrame {
             boolean loginSuccess = userDAO.loginUser(user);
             if (loginSuccess) {
                     JOptionPane.showMessageDialog(null, "Login successful");
-                    mainForm.setVisible(true);
+                    menuForm.setVisible(true);
                     this.setVisible(false); // Hide the login form
                 }
                 else{
